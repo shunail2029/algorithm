@@ -4,7 +4,7 @@ void insertion_sort(RandomAccessIterater first, RandomAccessIterater last) {
     for (int i=1; i<len; i++) {
         auto tmp = *(first + i);
         int j = i;
-        while (j > 0 && *(first+j-1) > tmp) {
+        while (j > 0 && tmp < *(first+j-1)) {
             *(first+j) = *(first+j-1);
             j--;
         }

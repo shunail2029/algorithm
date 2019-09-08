@@ -1,7 +1,7 @@
 template<class RandomAccessIterater, typename T>
 RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessIterater last, T key) {
     auto mid = first + (last - first) / 2;
-    if (key >= *mid) {
+    if (*mid <= key) {
         if (mid == last) {
             return mid+1;
         }
