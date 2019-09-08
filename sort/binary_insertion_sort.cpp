@@ -1,15 +1,7 @@
 template<class RandomAccessIterater, typename T>
 RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessIterater last, T key) {
     auto mid = first + (last - first) / 2;
-    if (*mid >= key) {
-        if (mid == first) {
-            return mid;
-        }
-        else {
-            return ::binary_search(first, mid-1, key);
-        }
-    }
-    else {
+    if (key >= *mid) {
         if (mid == last) {
             return mid+1;
         }
@@ -17,25 +9,33 @@ RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessItera
             return ::binary_search(mid+1, last, key);
         }
     }
+    else {
+        if (mid == first) {
+            return mid;
+        }
+        else {
+            return ::binary_search(first, mid-1, key);
+        }
+    }
 }
 
 template<class RandomAccessIterater, typename T, class Compare>
 RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessIterater last, T key, Compare cmp) {
     auto mid = first + (last - first) / 2;
-    if (!cmp(*mid, key)) {
-        if (mid == first) {
-            return mid;
-        }
-        else {
-            return ::binary_search(first, mid-1, key, cmp);
-        }
-    }
-    else {
+    if (!cmp(key, *mid)) {
         if (mid == last) {
             return mid+1;
         }
         else {
             return ::binary_search(mid+1, last, key, cmp);
+        }
+    }
+    else {
+        if (mid == first) {
+            return mid;
+        }
+        else {
+            return ::binary_search(first, mid-1, key, cmp);
         }
     }
 }

@@ -18,7 +18,7 @@ void insertion_sort(RandomAccessIterater first, RandomAccessIterater last, Compa
     for (int i=1; i<len; i++) {
         auto tmp = *(first + i);
         int j = i;
-        while (j > 0 && !cmp(*(first+j-1), tmp)) {
+        while (j > 0 && cmp(tmp, *(first+j-1))) {
             *(first+j) = *(first+j-1);
             j--;
         }

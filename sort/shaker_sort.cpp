@@ -35,7 +35,7 @@ void shaker_sort(RandomAccessIterater first, RandomAccessIterater last, Compare 
     while (true) {
         auto last_change = top;
         for (auto iter = top; iter != bottom; iter++) {
-            if (!cmp(*iter, *(iter+1))) {
+            if (cmp(*(iter+1), *iter)) {
                 std::swap(*iter, *(iter+1));
                 last_change = iter;
             }
