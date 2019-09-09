@@ -32,8 +32,11 @@ void bozo_sort(RandomAccessIterater first, RandomAccessIterater last) {
 
     std::uniform_int_distribution<> dist(0, len-1);
 
+    int i = 0, j = 0;
     while (!::sorted(first, last)) {
-        int i = dist(engine), j = dist(engine);
+        do {
+            i = dist(engine), j = dist(engine);
+        } while (i == j);
         std::swap(*(first+i), *(first+j));
     }
 }
@@ -47,8 +50,11 @@ void bozo_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cm
 
     std::uniform_int_distribution<> dist(0, len-1);
 
+    int i = 0, j = 0;
     while (!::sorted(first, last, cmp)) {
-        int i = dist(engine), j = dist(engine);
+        do {
+            i = dist(engine), j = dist(engine);
+        } while (i == j);
         std::swap(*(first+i), *(first+j));
     }
 }
