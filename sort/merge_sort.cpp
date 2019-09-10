@@ -109,9 +109,9 @@ void merge_sort(RandomAccessIterater first, RandomAccessIterater last) {
         return;
     }
     auto mid = first + (last - first) / 2;
-    merge_sort(first, mid);
-    merge_sort(mid, last);
-    merge(first, mid, last);
+    ::merge_sort(first, mid);
+    ::merge_sort(mid, last);
+    ::merge(first, mid, last);
 }
 
 template<class RandomAccessIterater, class Compare>
@@ -120,7 +120,7 @@ void merge_sort(RandomAccessIterater first, RandomAccessIterater last, Compare c
         return;
     }
     auto mid = first + (last - first) / 2;
-    merge_sort(first, mid, cmp);
-    merge_sort(mid, last, cmp);
-    merge(first, mid, last, cmp);
+    ::merge_sort(first, mid, cmp);
+    ::merge_sort(mid, last, cmp);
+    ::merge(first, mid, last, cmp);
 }
