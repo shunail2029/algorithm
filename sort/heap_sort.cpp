@@ -1,7 +1,7 @@
 #include <utility>
 
-template<class RandomAccessIterater>
-void heap_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void heap_sort(RandomAccessIterator first, RandomAccessIterator last) {
     int len = last - first;
     for (int i=1; i<len; i++) {
         int cur = i;
@@ -56,8 +56,8 @@ void heap_sort(RandomAccessIterater first, RandomAccessIterater last) {
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void heap_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void heap_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     int len = last - first;
     for (int i=1; i<len; i++) {
         int cur = i;

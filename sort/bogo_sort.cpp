@@ -1,8 +1,8 @@
 #include <random>
 #include <utility>
 
-template<class RandomAccessIterater>
-bool sorted(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+bool sorted(RandomAccessIterator first, RandomAccessIterator last) {
     int len = last - first;
     for (int i=0; i<len-1; i++) {
         if (*(first+i) > *(first+i+1)) {
@@ -12,8 +12,8 @@ bool sorted(RandomAccessIterater first, RandomAccessIterater last) {
     return true;
 }
 
-template <class RandomAccessIterater, class Compare>
-bool sorted(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template <class RandomAccessIterator, class Compare>
+bool sorted(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     int len = last - first;
     for (int i=0; i<len-1; i++) {
         if (cmp(*(first+i+1), *(first+i))) {
@@ -23,8 +23,8 @@ bool sorted(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) 
     return true;
 }
 
-template<class RandomAccessIterater>
-void shuffle(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void shuffle(RandomAccessIterator first, RandomAccessIterator last) {
     std::random_device seed_gen;
     std::default_random_engine engine(seed_gen());
     std::uniform_int_distribution<> dist;
@@ -38,15 +38,15 @@ void shuffle(RandomAccessIterater first, RandomAccessIterater last) {
     }
 }
 
-template<class RandomAccessIterater>
-void bogo_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void bogo_sort(RandomAccessIterator first, RandomAccessIterator last) {
     while (!::sorted(first, last)) {
         ::shuffle(first, last);
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void bogo_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void bogo_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     while (!::sorted(first, last, cmp)) {
         ::shuffle(first, last);
     }

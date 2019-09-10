@@ -1,8 +1,8 @@
 #include <iostream>
 #include <new>
 
-template<class RandomAccessIterater>
-void merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIterator last) {
     auto val = *first;
     using type = decltype(val);
 
@@ -52,8 +52,8 @@ void merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIte
     delete[] buf;
 }
 
-template<class RandomAccessIterater, class Compare>
-void merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIterator last, Compare cmp) {
     auto val = *first;
     using type = decltype(val);
 
@@ -103,8 +103,8 @@ void merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIte
     delete[] buf;
 }
 
-template<class RandomAccessIterater> 
-void merge_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator> 
+void merge_sort(RandomAccessIterator first, RandomAccessIterator last) {
     if (first == last || first+1 == last) {
         return;
     }
@@ -114,8 +114,8 @@ void merge_sort(RandomAccessIterater first, RandomAccessIterater last) {
     ::merge(first, mid, last);
 }
 
-template<class RandomAccessIterater, class Compare>
-void merge_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void merge_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     if (first == last || first+1 == last) {
         return;
     }

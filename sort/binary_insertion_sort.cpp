@@ -1,5 +1,5 @@
-template<class RandomAccessIterater, typename T>
-RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessIterater last, T key) {
+template<class RandomAccessIterator, typename T>
+RandomAccessIterator binary_search(RandomAccessIterator first, RandomAccessIterator last, T key) {
     auto mid = first + (last - first) / 2;
     if (*mid <= key) {
         if (mid == last) {
@@ -19,8 +19,8 @@ RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessItera
     }
 }
 
-template<class RandomAccessIterater, typename T, class Compare>
-RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessIterater last, T key, Compare cmp) {
+template<class RandomAccessIterator, typename T, class Compare>
+RandomAccessIterator binary_search(RandomAccessIterator first, RandomAccessIterator last, T key, Compare cmp) {
     auto mid = first + (last - first) / 2;
     if (!cmp(key, *mid)) {
         if (mid == last) {
@@ -40,8 +40,8 @@ RandomAccessIterater binary_search(RandomAccessIterater first, RandomAccessItera
     }
 }
 
-template<class RandomAccessIterater>
-void binary_insertion_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void binary_insertion_sort(RandomAccessIterator first, RandomAccessIterator last) {
     int len = last - first;
     for (int i=1; i<len; i++) {
         auto tmp = *(first+i);
@@ -53,8 +53,8 @@ void binary_insertion_sort(RandomAccessIterater first, RandomAccessIterater last
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void binary_insertion_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void binary_insertion_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     int len = last - first;
     for (int i=1; i<len; i++) {
         auto tmp = *(first+i);

@@ -1,7 +1,7 @@
 #include <utility>
 
-template<class RandomAccessIterater> 
-void double_selection_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator> 
+void double_selection_sort(RandomAccessIterator first, RandomAccessIterator last) {
     auto top = first, bottom = last;
     while (top != bottom && top != bottom-1) {
         auto mini = top, maxi = top;
@@ -29,8 +29,8 @@ void double_selection_sort(RandomAccessIterater first, RandomAccessIterater last
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void double_selection_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void double_selection_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     auto top = first, bottom = last;
     while (top != bottom && top != bottom-1) {
         auto mini = top, maxi = top;

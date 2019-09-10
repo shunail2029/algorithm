@@ -1,5 +1,5 @@
-template<class RandomAccessIterater>
-void inplace_merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIterater last) {
+template<class RandomAccessIterator>
+void inplace_merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIterator last) {
     auto iter1 = first, iter2 = mid;
     while (true) {
         if (iter1 == iter2 || iter2 == last) {
@@ -22,8 +22,8 @@ void inplace_merge(RandomAccessIterater first, RandomAccessIterater mid, RandomA
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void inplace_merge(RandomAccessIterater first, RandomAccessIterater mid, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void inplace_merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIterator last, Compare cmp) {
     auto iter1 = first, iter2 = mid;
     while (true) {
         if (iter1 == iter2 || iter2 == last) {
@@ -46,8 +46,8 @@ void inplace_merge(RandomAccessIterater first, RandomAccessIterater mid, RandomA
     }
 }
 
-template<class RandomAccessIterater> 
-void inplace_merge_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator> 
+void inplace_merge_sort(RandomAccessIterator first, RandomAccessIterator last) {
     if (first == last || first+1 == last) {
         return;
     }
@@ -57,8 +57,8 @@ void inplace_merge_sort(RandomAccessIterater first, RandomAccessIterater last) {
     ::inplace_merge(first, mid, last);
 }
 
-template<class RandomAccessIterater, class Compare>
-void inplace_merge_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void inplace_merge_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     if (first == last || first+1 == last) {
         return;
     }

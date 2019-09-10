@@ -1,7 +1,7 @@
 #include <utility>
 
-template<class RandomAccessIterater> 
-void bubble_sort(RandomAccessIterater first, RandomAccessIterater last) {
+template<class RandomAccessIterator> 
+void bubble_sort(RandomAccessIterator first, RandomAccessIterator last) {
     int len = last - first;
     for (int i=0; i<len-1; i++) {
         for (auto iter = first; iter != last-i-1; iter++) {
@@ -12,8 +12,8 @@ void bubble_sort(RandomAccessIterater first, RandomAccessIterater last) {
     }
 }
 
-template<class RandomAccessIterater, class Compare>
-void bubble_sort(RandomAccessIterater first, RandomAccessIterater last, Compare cmp) {
+template<class RandomAccessIterator, class Compare>
+void bubble_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
     int len = last - first;
     for (int i=0; i<len-1; i++) {
         for (auto iter = first; iter != last-i-1; iter++) {
