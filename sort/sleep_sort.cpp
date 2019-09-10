@@ -1,3 +1,5 @@
+// this code should be compiled with "-pthread" option.
+
 #include <iostream>
 #include <mutex>
 #include <thread>
