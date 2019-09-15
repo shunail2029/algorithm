@@ -7,6 +7,7 @@ void bucket_sort(RandomAccessIterator first, RandomAccessIterator last) {
     if (first == last) {
         return;
     }
+    
     if (typeid(*first) != typeid(int)) {
         std::cout << "this sort can only be used for int array." << std::endl;
         return;

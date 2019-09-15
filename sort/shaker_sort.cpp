@@ -2,6 +2,10 @@
 
 template<class RandomAccessIterator> 
 void shaker_sort(RandomAccessIterator first, RandomAccessIterator last) {
+    if (first == last) {
+        return;
+    }
+
     auto top = first, bottom = last-1;
     while (true) {
         auto last_change = top;
@@ -31,6 +35,10 @@ void shaker_sort(RandomAccessIterator first, RandomAccessIterator last) {
 
 template<class RandomAccessIterator, class Compare>
 void shaker_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cmp) {
+    if (first == last) {
+        return;
+    }
+
     auto top = first, bottom = last-1;
     while (true) {
         auto last_change = top;
