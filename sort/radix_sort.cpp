@@ -28,8 +28,7 @@ void radix_sort(RandomAccessIterator first, RandomAccessIterator last, long long
         }
         if ((tmp & digit) == 0) {
             zero[cnt_zero++] = tmp;
-        }
-        else {
+        } else {
             one[cnt_one++] = tmp;
         }
     }
@@ -49,8 +48,7 @@ void radix_sort(RandomAccessIterator first, RandomAccessIterator last, long long
 
     if (finish) {
         return;
-    }
-    else {
+    } else {
         ::radix_sort(first, last, digit << 1);
     }
 }
@@ -81,8 +79,7 @@ void radix_sort_greater(RandomAccessIterator first, RandomAccessIterator last, l
         }
         if ((tmp & digit) == 0) {
             zero[cnt_zero++] = tmp;
-        }
-        else {
+        } else {
             one[cnt_one++] = tmp;
         }
     }
@@ -102,8 +99,7 @@ void radix_sort_greater(RandomAccessIterator first, RandomAccessIterator last, l
 
     if (finish) {
         return;
-    }
-    else {
+    } else {
         ::radix_sort_greater(first, last, digit << 1);
     }
 }

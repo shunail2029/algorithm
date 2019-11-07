@@ -15,12 +15,10 @@ void double_selection_sort(RandomAccessIterator first, RandomAccessIterator last
         }
         if (maxi == top && mini == bottom-1) {
             std::swap(*top, *(bottom-1));
-        }
-        else if (maxi == top) {
+        } else if (maxi == top) {
             std::swap(*(bottom-1), *maxi);
             std::swap(*top, *mini);
-        }
-        else {
+        } else {
             std::swap(*top, *mini);
             std::swap(*(bottom-1), *maxi);
         }
@@ -44,12 +42,10 @@ void double_selection_sort(RandomAccessIterator first, RandomAccessIterator last
         }
         if (maxi == top && mini == bottom-1) {
             std::swap(*top, *(bottom-1));
-        }
-        else if (maxi == top) {
+        } else if (maxi == top) {
             std::swap(*(bottom-1), *maxi);
             std::swap(*top, *mini);
-        }
-        else {
+        } else {
             std::swap(*top, *mini);
             std::swap(*(bottom-1), *maxi);
         }

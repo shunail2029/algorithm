@@ -4,16 +4,13 @@ RandomAccessIterator binary_search(RandomAccessIterator first, RandomAccessItera
     if (*mid <= key) {
         if (mid == last) {
             return mid+1;
-        }
-        else {
+        } else {
             return ::binary_search(mid+1, last, key);
         }
-    }
-    else {
+    } else {
         if (mid == first) {
             return mid;
-        }
-        else {
+        } else {
             return ::binary_search(first, mid-1, key);
         }
     }
@@ -25,16 +22,13 @@ RandomAccessIterator binary_search(RandomAccessIterator first, RandomAccessItera
     if (!cmp(key, *mid)) {
         if (mid == last) {
             return mid+1;
-        }
-        else {
+        } else {
             return ::binary_search(mid+1, last, key, cmp);
         }
-    }
-    else {
+    } else {
         if (mid == first) {
             return mid;
-        }
-        else {
+        } else {
             return ::binary_search(first, mid-1, key, cmp);
         }
     }

@@ -4,12 +4,10 @@ void inplace_merge(RandomAccessIterator first, RandomAccessIterator mid, RandomA
     while (true) {
         if (iter1 == iter2 || iter2 == last) {
             return;
-        }
-        else {
+        } else {
             if (*iter1 <= *iter2) {
                 iter1++;
-            }
-            else {
+            } else {
                 auto tmp = *iter2;
                 for (auto iter = iter2; iter != iter1; iter--) {
                     *iter = *(iter-1);
@@ -28,12 +26,10 @@ void inplace_merge(RandomAccessIterator first, RandomAccessIterator mid, RandomA
     while (true) {
         if (iter1 == iter2 || iter2 == last) {
             return;
-        }
-        else {
+        } else {
             if (!cmp(*iter2, *iter1)) {
                 iter1++;
-            }
-            else {
+            } else {
                 auto tmp = *iter2;
                 for (auto iter = iter2; iter != iter1; iter--) {
                     *iter = *(iter-1);

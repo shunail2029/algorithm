@@ -10,8 +10,7 @@ void heap_sort(RandomAccessIterator first, RandomAccessIterator last) {
             if (*(first+parent) < *(first+cur)) {
                 std::swap(*(first+parent), *(first+cur));
                 cur = parent;
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -23,32 +22,26 @@ void heap_sort(RandomAccessIterator first, RandomAccessIterator last) {
             int child1 = cur*2+1, child2 = cur*2+2;
             if (child1 >= len-i) {
                 break;
-            }
-            else if (child2 >= len-i) {
+            } else if (child2 >= len-i) {
                 if (*(first+cur) < *(first+child1)) {
                     std::swap(*(first+cur), *(first+child1));
                     cur = child1;
-                }
-                else {
+                } else {
                     break;
                 }
-            }
-            else {
+            } else {
                 if (*(first+cur) < *(first+child1)) {
                     if (*(first+child1) < *(first+child2)) {
                         std::swap(*(first+cur), *(first+child2));
                         cur = child2;
-                    }
-                    else {
+                    } else {
                         std::swap(*(first+cur), *(first+child1));
                         cur = child1;
                     }
-                }
-                else if (*(first+cur) < *(first+child2)) {
+                } else if (*(first+cur) < *(first+child2)) {
                     std::swap(*(first+cur), *(first+child2));
                     cur = child2;
-                }
-                else {
+                } else {
                     break;
                 }
             }
@@ -66,8 +59,7 @@ void heap_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cm
             if (cmp(*(first+parent), *(first+cur))) {
                 std::swap(*(first+parent), *(first+cur));
                 cur = parent;
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -79,32 +71,26 @@ void heap_sort(RandomAccessIterator first, RandomAccessIterator last, Compare cm
             int child1 = cur*2+1, child2 = cur*2+2;
             if (child1 >= len-i) {
                 break;
-            }
-            else if (child2 >= len-i) {
+            } else if (child2 >= len-i) {
                 if (cmp(*(first+cur), *(first+child1))) {
                     std::swap(*(first+cur), *(first+child1));
                     cur = child1;
-                }
-                else {
+                } else {
                     break;
                 }
-            }
-            else {
+            } else {
                 if (cmp(*(first+cur), *(first+child1))) {
                     if (cmp(*(first+child1), *(first+child2))) {
                         std::swap(*(first+cur), *(first+child2));
                         cur = child2;
-                    }
-                    else {
+                    } else {
                         std::swap(*(first+cur), *(first+child1));
                         cur = child1;
                     }
-                }
-                else if (cmp(*(first+cur), *(first+child2))) {
+                } else if (cmp(*(first+cur), *(first+child2))) {
                     std::swap(*(first+cur), *(first+child2));
                     cur = child2;
-                }
-                else {
+                } else {
                     break;
                 }
             }

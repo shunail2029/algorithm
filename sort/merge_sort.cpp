@@ -21,25 +21,21 @@ void merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIte
     while (true) {
         if (iter1 == mid && iter2 == last) {
             break;
-        }
-        else if (iter1 == mid) {
+        } else if (iter1 == mid) {
             for (auto iter = iter2; iter != last; iter++) {
                 buf[i++] = *iter;
             }
             iter2 = last;
-        }
-        else if (iter2 == last) {
+        } else if (iter2 == last) {
             for (auto iter = iter1; iter != mid; iter++) {
                 buf[i++] = *iter;
             }
             iter1 = mid;
-        }
-        else {
+        } else {
             if (*iter1 <= *iter2) {
                 buf[i++] = *iter1;
                 iter1++;
-            }
-            else {
+            } else {
                 buf[i++] = *iter2;
                 iter2++;
             }
@@ -72,25 +68,21 @@ void merge(RandomAccessIterator first, RandomAccessIterator mid, RandomAccessIte
     while (true) {
         if (iter1 == mid && iter2 == last) {
             break;
-        }
-        else if (iter1 == mid) {
+        } else if (iter1 == mid) {
             for (auto iter = iter2; iter != last; iter++) {
                 buf[i++] = *iter;
             }
             iter2 = last;
-        }
-        else if (iter2 == last) {
+        } else if (iter2 == last) {
             for (auto iter = iter1; iter != mid; iter++) {
                 buf[i++] = *iter;
             }
             iter1 = mid;
-        }
-        else {
+        } else {
             if (!cmp(*iter2, *iter1)) {
                 buf[i++] = *iter1;
                 iter1++;
-            }
-            else {
+            } else {
                 buf[i++] = *iter2;
                 iter2++;
             }

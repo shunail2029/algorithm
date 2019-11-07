@@ -10,8 +10,7 @@ void gnome_sort(RandomAccessIterator first, RandomAccessIterator last) {
     while (iter != last) {
         if (*iter >= *(iter-1)) {
             iter++;
-        }
-        else {
+        } else {
             std::swap(*iter, *(iter-1));
             iter--;
             if (iter == first) {
@@ -31,8 +30,7 @@ void gnome_sort(RandomAccessIterator first, RandomAccessIterator last, Compare c
     while (iter != last) {
         if (!cmp(*iter, *(iter-1))) {
             iter++;
-        }
-        else {
+        } else {
             std::swap(*iter, *(iter-1));
             iter--;
             if (iter == first) {

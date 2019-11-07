@@ -5,22 +5,17 @@ RandomAccessIterator middle(RandomAccessIterator one, RandomAccessIterator two, 
     if (*one < *two) {
         if (*two < *three) {
             return two;
-        }
-        else if (*three < *one) {
+        } else if (*three < *one) {
             return one;
-        }
-        else {
+        } else {
             return three;
         }
-    }
-    else {
+    } else {
         if (*one < *three) {
             return one;
-        }
-        else if (*three < *two) {
+        } else if (*three < *two) {
             return two;
-        }
-        else {
+        } else {
             return three;
         }
     }
@@ -31,22 +26,17 @@ RandomAccessIterator middle(RandomAccessIterator one, RandomAccessIterator two, 
     if (cmp(*one, *two)) {
         if (cmp(*two, *three)) {
             return two;
-        }
-        else if (cmp(*three, *one)) {
+        } else if (cmp(*three, *one)) {
             return one;
-        }
-        else {
+        } else {
             return three;
         }
-    }
-    else {
+    } else {
         if (cmp(*one, *three)) {
             return one;
-        }
-        else if (cmp(*three, *two)) {
+        } else if (cmp(*three, *two)) {
             return two;
-        }
-        else {
+        } else {
             return three;
         }
     }
